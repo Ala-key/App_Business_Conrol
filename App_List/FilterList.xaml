@@ -1,0 +1,56 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:App_List"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="App_List.FilterList"
+        mc:Ignorable="d"
+        Title="FilterList" Height="580" Width="550" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="/BG.png" TileMode="None"/>
+    </Window.Background>
+    <Grid>
+        <Label Content="Фильтр" HorizontalAlignment="Left" Margin="36,36,0,0" VerticalAlignment="Top" Foreground="#CCD1D9" FontSize="35" FontFamily="Segoe UI Variable"   Height="74" Width="345"/>
+        <Label Content="Выберите период"   HorizontalAlignment="Left" Margin="37,110,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Variable" Foreground="#CCD1D9"/>
+
+        <Border BorderThickness="1" BorderBrush="#7F020B1A" CornerRadius="10" Padding="2" Background="#7F020B1A" Margin="36,186,342,350">
+            <DatePicker />
+        </Border>
+        <Label Content="Дата начала" HorizontalAlignment="Left" Margin="47,150,0,0" VerticalAlignment="Top" Foreground="#FFC2C2C2" FontSize="14" />
+        <Border BorderThickness="1" BorderBrush="#7F020B1A" CornerRadius="10" Padding="2" Background="#7F020B1A" Margin="275,186,103,352">
+            <DatePicker Margin="3,0,-3,0" />
+        </Border>
+        <Label Content="Дата окончания" HorizontalAlignment="Left" Margin="286,150,0,0" VerticalAlignment="Top" Foreground="#FFC2C2C2" FontSize="14"  Background="Transparent" />
+        <CheckBox Content="Ⅰ квартал" Padding="0,0,0,0 "  HorizontalAlignment="Left" Margin="37,0,0,0" VerticalAlignment="Center" Height="44" Width="86" Foreground="#FFC2C2C2" Background="#FF3A9DB7"/>
+        <CheckBox Content="Ⅱ квартал" Padding="0,0,0,0 "  HorizontalAlignment="Left" Margin="37,302,0,0" VerticalAlignment="Top" Height="32" Width="86" Foreground="#FFC2C2C2" Background="#FF3A9DB7"/>
+        <CheckBox Content="Ⅲ квартал" Padding="0,0,0,0 "  HorizontalAlignment="Left" Margin="37,329,0,0" VerticalAlignment="Top" Height="29" Width="86" Foreground="#FFC2C2C2" Background="#FF3A9DB7"/>
+        <CheckBox Content="Ⅳ квартал" Padding="0,0,0,0 "  HorizontalAlignment="Left" Margin="37,358,0,0" VerticalAlignment="Top" Height="24" Width="86" Foreground="#FFC2C2C2" Background="#FF3A9DB7"/>
+        <CheckBox Content="Текущий год" Padding="0,0,0,0 "  HorizontalAlignment="Left" Margin="36,413,0,0" VerticalAlignment="Top" Height="29" Width="97" Foreground="#FFC2C2C2" Background="#FF3A9DB7"/>
+        <CheckBox Content="Прошлый год" Padding="0,0,0,0 "  HorizontalAlignment="Left" Margin="36,442,0,0" VerticalAlignment="Top" Height="24" Width="97" Foreground="#FFC2C2C2" Background="#FF3A9DB7"/>
+        <Button Background="#074AC1"
+
+                
+                materialDesign:ButtonAssist.CornerRadius="10"
+    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+    Style="{StaticResource MaterialDesignRaisedButton}"
+     Margin="18,506,398,10" FontSize="12" FontFamily="Segoe UI Variable">
+            <TextBlock
+      Text="Применить" Height="17" />
+        </Button>
+        <Button Background="Transparent"
+
+                
+                materialDesign:ButtonAssist.CornerRadius="10"
+    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+    Style="{StaticResource MaterialDesignRaisedButton}"
+     Margin="197,521,233,27" Foreground="#FFC2C2C2" BorderBrush="#FFC2C2C2" FontSize="12">
+            <TextBlock
+      Text="Отмена" />
+        </Button>
+        <Button Content="x" Foreground="Gray" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Margin="515,-10,0,0" VerticalAlignment="Top" Width="44" Height="27" Click="Button_Click" FontSize="16"/>
+
+
+
+    </Grid>
+</Window>

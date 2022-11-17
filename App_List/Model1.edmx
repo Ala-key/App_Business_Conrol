@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище ShopdbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Deletes_Shop">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Документ" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Номер заказа" Type="int" Nullable="false" />
+          <Property Name="Номер детали" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Количество" Type="int" Nullable="false" />
+          <Property Name="Машинное время" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Дата" Type="date" Nullable="false" />
+          <Property Name="Дата удаления" Type="date" Nullable="false" />
+          <Property Name="Комментарий" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Details_Shop">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Номер детали" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Номер заказа" Type="int" Nullable="false" />
+          <Property Name="Документ" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Машинное время" Type="nvarchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Main_Shop">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Документ" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Номер заказа" Type="int" Nullable="false" />
+          <Property Name="Номер детали" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Количество" Type="int" Nullable="false" />
+          <Property Name="Машинное время" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="Дата" Type="date" Nullable="false" />
+          <Property Name="Комментарий" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityContainer Name="Хранилище ShopdbModelContainer">
+          <EntitySet Name="Deletes_Shop" EntityType="Self.Deletes_Shop" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Details_Shop" EntityType="Self.Details_Shop" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Main_Shop" EntityType="Self.Main_Shop" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ShopdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Deletes_Shop">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Документ" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Номер_заказа" Type="Int32" Nullable="false" />
+          <Property Name="Номер_детали" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Количество" Type="Int32" Nullable="false" />
+          <Property Name="Машинное_время" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Дата" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Дата_удаления" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Комментарий" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Details_Shop">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Номер_детали" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Номер_заказа" Type="Int32" Nullable="false" />
+          <Property Name="Документ" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Машинное_время" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Main_Shop">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Документ" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Номер_заказа" Type="Int32" Nullable="false" />
+          <Property Name="Номер_детали" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Количество" Type="Int32" Nullable="false" />
+          <Property Name="Машинное_время" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Дата" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Комментарий" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="ShopdbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Deletes_Shop" EntityType="Self.Deletes_Shop" />
+          <EntitySet Name="Details_Shop" EntityType="Self.Details_Shop" />
+          <EntitySet Name="Main_Shop" EntityType="Self.Main_Shop" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище ShopdbModelContainer" CdmEntityContainer="ShopdbEntities">
+          <EntitySetMapping Name="Deletes_Shop">
+            <EntityTypeMapping TypeName="ShopdbModel.Deletes_Shop">
+              <MappingFragment StoreEntitySet="Deletes_Shop">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Документ" ColumnName="Документ" />
+                <ScalarProperty Name="Номер_заказа" ColumnName="Номер заказа" />
+                <ScalarProperty Name="Номер_детали" ColumnName="Номер детали" />
+                <ScalarProperty Name="Количество" ColumnName="Количество" />
+                <ScalarProperty Name="Машинное_время" ColumnName="Машинное время" />
+                <ScalarProperty Name="Дата" ColumnName="Дата" />
+                <ScalarProperty Name="Дата_удаления" ColumnName="Дата удаления" />
+                <ScalarProperty Name="Комментарий" ColumnName="Комментарий" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Details_Shop">
+            <EntityTypeMapping TypeName="ShopdbModel.Details_Shop">
+              <MappingFragment StoreEntitySet="Details_Shop">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Номер_детали" ColumnName="Номер детали" />
+                <ScalarProperty Name="Номер_заказа" ColumnName="Номер заказа" />
+                <ScalarProperty Name="Документ" ColumnName="Документ" />
+                <ScalarProperty Name="Машинное_время" ColumnName="Машинное время" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Main_Shop">
+            <EntityTypeMapping TypeName="ShopdbModel.Main_Shop">
+              <MappingFragment StoreEntitySet="Main_Shop">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Документ" ColumnName="Документ" />
+                <ScalarProperty Name="Номер_заказа" ColumnName="Номер заказа" />
+                <ScalarProperty Name="Номер_детали" ColumnName="Номер детали" />
+                <ScalarProperty Name="Количество" ColumnName="Количество" />
+                <ScalarProperty Name="Машинное_время" ColumnName="Машинное время" />
+                <ScalarProperty Name="Дата" ColumnName="Дата" />
+                <ScalarProperty Name="Комментарий" ColumnName="Комментарий" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
