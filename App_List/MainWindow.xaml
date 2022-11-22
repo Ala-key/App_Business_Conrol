@@ -17,6 +17,7 @@
     <Grid Margin="0,0,0,-6">
         <Label  Foreground="White"   Content="Все записи" HorizontalAlignment="Left" Margin="28,60,0,0" VerticalAlignment="Top" Background="Transparent" FontFamily="Segoe UI Variable" FontSize="14" />
         <Button BorderBrush="Transparent"  Foreground="#C1C1C1" Cursor="Hand"   Content="Корзина" HorizontalAlignment="Left" Margin="128,60,0,0" VerticalAlignment="Top" Background="Transparent" FontFamily="Segoe UI Variable" FontSize="14" Click="Button_Click_2" />
+        <Button Content="x" Foreground="Gray" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Right" Margin="0,0,1,0" VerticalAlignment="Top" Width="44" Height="27" Click="Close_Form_Click" FontSize="16" Cursor="Hand"/>
 
 
         <Border BorderThickness="1" BorderBrush="#7F020B1A" CornerRadius="10" Padding="2" Background="#7F020B1A" Margin="258,52,458,618">
@@ -26,7 +27,7 @@
                     <ColumnDefinition Width="455*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Image Source="/Images/Search.png" Width="18px" Grid.Column="0" HorizontalAlignment="Left" Margin="0,9,0,9"/>
-                <TextBox x:Name="txtsearch" Grid.Column="1" Margin="0,5,0,5"  ></TextBox>
+                <TextBox x:Name="txtsearch" Grid.Column="1" Foreground="AliceBlue" Margin="0,5,0,5"  ></TextBox>
             </Grid>
 
 
@@ -49,7 +50,7 @@
       Text="Добавить запись" />
         </Button>
 
-        <DataGrid    x:Name="dgr"  Margin="28,148,44,10" Background="Transparent"  AutoGenerateColumns="False" GridLinesVisibility="None" IsReadOnly="True"     HorizontalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden"  RowHeight="40" HeadersVisibility="Column" AlternationCount="1" AlternatingRowBackground="#B2020B1A" Foreground="#c7c5c5"  SelectionChanged="dgr_SelectionChanged" >
+        <DataGrid    x:Name="dgr"  Margin="28,148,44,10"  Background="Transparent" AutoGenerateColumns="False" GridLinesVisibility="None" IsReadOnly="True"     HorizontalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden"  HeadersVisibility="Column" AlternationCount="1" AlternatingRowBackground="#B2020B1A" Foreground="#c7c5c5"  SelectionChanged="dgr_SelectionChanged" >
 
 
             <DataGrid.Resources>
@@ -57,6 +58,8 @@
                     <Setter Property="Foreground" Value="#c7c5c5" />
                 </Style>
             </DataGrid.Resources>
+
+           
 
 
             <DataGrid.CellStyle>
@@ -69,6 +72,7 @@
                             <Setter Property="BorderBrush" Value="Transparent">
 
                             </Setter>
+                            
 
 
                         </Trigger>
@@ -79,17 +83,22 @@
                 </Style>
             </DataGrid.CellStyle>
 
+           
+
             <DataGrid.Columns>
 
-                <DataGridTextColumn  Header="Документ" IsReadOnly="True" Width="120"  Binding="{Binding Path=Документ}">
+                <DataGridTextColumn  Header="Документ"  IsReadOnly="True" Width="120"  Binding="{Binding Path=Документ}">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="VerticalAlignment" Value="Center" />
+                            <Setter Property="Margin" Value="10 10 10 10"></Setter>
+
+
                         </Style>
 
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Номер заказа" IsReadOnly="True" Width="120" Binding="{Binding Path=Номер_заказа}">
+                <DataGridTextColumn  Header="Номер заказа" IsReadOnly="True" Width="120"  Binding="{Binding Path=Номер_заказа}">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="VerticalAlignment" Value="Center" />
@@ -126,11 +135,11 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Комментарий" IsReadOnly="True"  Width="*"   Binding="{Binding Path=Комментарий}" >
+                <DataGridTextColumn Header="Комментарий" IsReadOnly="False"  Width="*"   Binding="{Binding Path=Комментарий}" CanUserResize="True" >
                     <DataGridTextColumn.ElementStyle>
                         <Style>
                             <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
-
+                            
                         </Style>
 
                     </DataGridTextColumn.ElementStyle>
@@ -189,6 +198,13 @@
 
 
             </DataGrid.Columns>
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Setter Property="Height" Value="Auto"/>
+                    <Setter Property="Background" Value="Transparent"></Setter>
+                </Style>
+                
+            </DataGrid.RowStyle>
         </DataGrid>
 
 

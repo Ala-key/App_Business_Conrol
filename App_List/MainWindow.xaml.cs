@@ -28,6 +28,7 @@ namespace App_List
         {
             InitializeComponent();
 
+            
             ShopdbEntities = new ShopdbEntities();
 
             
@@ -54,13 +55,13 @@ namespace App_List
             {
                 if (txtsearch.Text != null)
                 {
-                    string keyword = txtsearch.Text;
+                   
 
                    
-                    
 
 
-                    dgr.ItemsSource = ShopdbEntities.Main_Shop.Where(x => x.Документ.Contains(keyword)).ToList();
+
+                    dgr.ItemsSource = ShopdbEntities.Main_Shop.Where(x => x.Номер_детали.Contains(txtsearch.Text)).ToList();
                 }
                 if (txtsearch.Text.Equals(String.Empty))
                 {
@@ -102,6 +103,7 @@ namespace App_List
         {
             FilterList filterList = new FilterList();
             filterList.Show();
+
         }
 
        
@@ -115,17 +117,9 @@ namespace App_List
             changed_List.Show();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Close_Form_Click(object sender, RoutedEventArgs e)
         {
-            int id = (dgr.SelectedItem as Main_Shop).id;
-
-            var deletemember = ShopdbEntities.Main_Shop.Where(x => x.id == id).Single();
-
-            ShopdbEntities.Main_Shop.Remove(deletemember);
-
-            ShopdbEntities.SaveChanges();
-
-            dgr.ItemsSource = ShopdbEntities.Main_Shop.ToList();
+            this.Close();
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)

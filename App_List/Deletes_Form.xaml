@@ -25,7 +25,7 @@
                     <ColumnDefinition Width="455*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Image Source="/Images/Search.png" Width="18px" Grid.Column="0" HorizontalAlignment="Left" Margin="0,9,0,9"/>
-                <TextBox x:Name="txtsearch" Grid.Column="1" Margin="0,5,0,5"></TextBox>
+                <TextBox x:Name="txtsearch" Foreground="AliceBlue" Grid.Column="1" Margin="0,5,0,5"></TextBox>
             </Grid>
 
 
@@ -33,13 +33,13 @@
         </Border>
 
         <Image Source="/Images/Fill.png" Margin="772,65,412,631" Height="14px" Width="13px"/>
-        <Button  Foreground="#C1C1C1"   Content="Фильтр" HorizontalAlignment="Left" Margin="792,59,0,0" VerticalAlignment="Top" Background="Transparent" FontFamily="Segoe UI Variable" FontSize="14" Height="35"  />
+        <Button  Foreground="#C1C1C1"   Content="Фильтр" HorizontalAlignment="Left" Margin="792,52,0,0" VerticalAlignment="Top" Background="Transparent" FontFamily="Segoe UI Variable" FontSize="14" Height="35" BorderBrush="Transparent" />
 
 
 
-        
 
-        <DataGrid    x:Name="dgr"  Margin="28,148,44,10" Background="Transparent"  AutoGenerateColumns="False" GridLinesVisibility="None" IsReadOnly="True"     HorizontalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden"  RowHeight="40" HeadersVisibility="Column" AlternationCount="1" AlternatingRowBackground="#B2020B1A" Foreground="#c7c5c5"   >
+
+        <DataGrid    x:Name="dgr"  Margin="28,148,44,10" Background="Transparent"  AutoGenerateColumns="False" GridLinesVisibility="None" IsReadOnly="True"     HorizontalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden"   HeadersVisibility="Column" AlternationCount="1" AlternatingRowBackground="#B2020B1A" Foreground="#c7c5c5"   >
 
 
             <DataGrid.Resources>
@@ -71,45 +71,54 @@
 
             <DataGrid.Columns>
 
-                <DataGridTextColumn  Header="Документ" IsReadOnly="True" Width="120"  Binding="{Binding Path=Документ}">
+                <DataGridTextColumn  Header="Документ" IsReadOnly="True" Width="*"  Binding="{Binding Path=Документ}">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="VerticalAlignment" Value="Center" />
-                        </Style>
-
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="Номер заказа" IsReadOnly="True" Width="120" Binding="{Binding Path=Номер_заказа}">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="VerticalAlignment" Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="Номер детали" IsReadOnly="True" Width="125" Binding="{Binding Path=Номер_детали}">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="VerticalAlignment" Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="Количество" IsReadOnly="True" Width="120" Binding="{Binding Path=Количество}">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="VerticalAlignment" Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="Машинное время" IsReadOnly="True" Width="150" Binding="{Binding Path=Машинное_время}">
-                    <DataGridTextColumn.ElementStyle>
-                        <Style TargetType="TextBlock">
-                            <Setter Property="VerticalAlignment" Value="Center" />
+                            <Setter Property="Margin" Value="10 10 10 10"></Setter>
 
                         </Style>
 
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Дата" Width="120" IsReadOnly="True" Binding="{Binding Path=Дата,StringFormat={}{0:dd/MM/yyyy}}">
+                <DataGridTextColumn Header="Номер заказа" IsReadOnly="True" Width="*" Binding="{Binding Path=Номер_заказа}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Номер детали" IsReadOnly="True" Width="*" Binding="{Binding Path=Номер_детали}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Количество" IsReadOnly="True" Width="*" Binding="{Binding Path=Количество}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Машинное время" IsReadOnly="True" Width="*" Binding="{Binding Path=Машинное_время}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center" />
+
+                        </Style>
+
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Дата" Width="*" IsReadOnly="True" Binding="{Binding Path=Дата,StringFormat={}{0:dd/MM/yyyy}}">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Дата Удаления" Width="*" IsReadOnly="True" Binding="{Binding Path=Дата_удаления,StringFormat={}{0:dd/MM/yyyy}}">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="VerticalAlignment" Value="Center" />
@@ -144,7 +153,7 @@
                                         </Style>
                                     </Button.Style>
 
-                                   
+
 
 
 
@@ -158,7 +167,16 @@
 
 
             </DataGrid.Columns>
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Setter Property="Height" Value="Auto"/>
+                    <Setter Property="Background" Value="Transparent"></Setter>
+                </Style>
+
+            </DataGrid.RowStyle>
+
         </DataGrid>
+        <Button Content="x" Foreground="Gray" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Right" Margin="0,0,1,0" VerticalAlignment="Top" Width="44" Height="27" Click="Close_Del_Form" FontSize="16" Cursor="Hand"/>
 
 
 

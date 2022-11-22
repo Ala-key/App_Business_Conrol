@@ -65,20 +65,19 @@ namespace App_List
             {
                 if (txtsearch.Text != null)
                 {
-                    string keyword = txtsearch.Text;
+                   
 
 
 
 
 
-                    dgr.ItemsSource = db.Main_Shop.Where(x => x.Документ.Contains(keyword)).ToList();
+                    dgr.ItemsSource = db.Deletes_Shop.Where(x => x.Номер_детали.Contains(txtsearch.Text)).ToList();
                 }
                 if (txtsearch.Text.Equals(String.Empty))
                 {
-                    using (ShopdbEntities shopdb = new ShopdbEntities())
-                    {
-                        shopdb.Main_Shop.ToList();
-                    }
+                    db = new ShopdbEntities();
+
+                    dgr.ItemsSource = db.Deletes_Shop.ToList();
                 }
             }
         }
@@ -89,20 +88,19 @@ namespace App_List
             {
                 if (txtsearch.Text != null)
                 {
-                    string keyword = txtsearch.Text;
 
 
 
+                    dgr.ItemsSource = db.Deletes_Shop.Where(x => x.Номер_детали.Contains(txtsearch.Text)).ToList();
 
 
-                    dgr.ItemsSource = db.Main_Shop.Where(x => x.Документ.Contains(keyword)).ToList();
+
                 }
                 if (txtsearch.Text.Equals(String.Empty))
                 {
-                    using(ShopdbEntities shopdb = new ShopdbEntities())
-                    {
-                        shopdb.Main_Shop.ToList();
-                    }
+                    db = new ShopdbEntities();
+
+                    dgr.ItemsSource = db.Deletes_Shop.ToList();
                 }
             }
         }
@@ -113,7 +111,7 @@ namespace App_List
 
             MainWindow mainWindow = new MainWindow(ret);
 
-            mainWindow.ShowDialog();
+            mainWindow.Show();
 
             this.Close();
         }
@@ -122,8 +120,13 @@ namespace App_List
         {
             MainWindow mainWindow = new MainWindow();
 
-            mainWindow.ShowDialog();
+            mainWindow.Show();
 
+            this.Close();
+        }
+
+        private void Close_Del_Form(object sender, RoutedEventArgs e)
+        {
             this.Close();
         }
     }

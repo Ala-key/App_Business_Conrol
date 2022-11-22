@@ -63,7 +63,7 @@
             <TextBlock
       Text="Отмена" />
         </Button>
-        <Button Content="x" Foreground="Gray" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Margin="506,10,0,0" VerticalAlignment="Top" Width="44" Height="27" Click="Button_Click" FontSize="16"/>
+        <Button Content="x" Foreground="Gray" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Margin="500,0,0,700" VerticalAlignment="Bottom" Width="44" Height="27" Click="Button_Click" FontSize="16" Cursor="Hand"/>
 
     </Grid>
 </Window>

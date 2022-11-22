@@ -65,7 +65,7 @@
             <TextBlock
       Text="Отмена" />
         </Button>
-        <Button Content="x" Foreground="Gray" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Margin="506,36,0,0" VerticalAlignment="Top" Width="44" Height="27" FontSize="16" />
+        <Button Content="x" Foreground="Gray" Background="Transparent" BorderBrush="Transparent" HorizontalAlignment="Left" Margin="506,36,0,0" VerticalAlignment="Top" Width="44" Height="27" FontSize="16" Cursor="Hand" Click="Close_Click"  />
         <Label x:Name="erorr1"   HorizontalAlignment="Left" Margin="42,201,0,0" VerticalAlignment="Top" Height="29" Width="214"/>
         <Label x:Name="error2" HorizontalAlignment="Left" Margin="42,314,0,0" VerticalAlignment="Top"/>
         <Label x:Name="error3" HorizontalAlignment="Left" Margin="45,417,0,0" VerticalAlignment="Top"/>
